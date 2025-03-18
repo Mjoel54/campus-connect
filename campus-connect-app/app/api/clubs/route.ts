@@ -1,4 +1,4 @@
-import { clubs } from "../../club-data";
+import { clubs } from "@/app/club-data";
 
 export async function GET() {
   return new Response(JSON.stringify(clubs), {
