@@ -1,6 +1,11 @@
+import { clubs } from "@/app/club-data";
+
 export async function GET() {
-  return new Response("club retrieved", {
+  return new Response(JSON.stringify(clubs), {
     status: 200,
+    headers: {
+      "Content-Type": "application/json",
+    },
   });
 }
 
