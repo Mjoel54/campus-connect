@@ -48,3 +48,31 @@ export async function GET(
     },
   });
 }
+
+type ClubBody = {
+  productId: string;
+};
+export async function POST(
+  request: NextRequest,
+  { params }: { params: Params }
+) {
+  const userId = params.id;
+  const body: ClubBody = await request.json();
+  const clubId = body.productId;
+
+  const userMapping = userClubsMapping.find((user) => user.id === userId);
+
+  // If no user mapping is found, return a 404 response
+  if (!userMapping) {
+    return new Response("User not found", {
+      status: 404,
+    });
+  }
+
+  // Add the new club to the user's clubs array
+  userMapping.clubs.push(clubId);
+
+  return new Response("Club added successfully", {
+    status: 201,
+  });
+}
