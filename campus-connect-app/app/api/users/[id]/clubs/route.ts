@@ -7,7 +7,7 @@ type UserClubs = {
 };
 
 // This is your user-club mapping data
-const userClubsMapping: UserClubs[] = [{ id: "1", clubs: ["1", "2"] }];
+const userClubsMapping: UserClubs[] = [{ id: "1", clubs: [] }];
 
 type Params = {
   id: string;
@@ -31,6 +31,15 @@ export async function GET(
   const userClubsData = userMapping.clubs.map((clubId) =>
     clubData.find((club) => club.id === clubId)
   );
+
+  if (userClubsData === undefined) {
+    return new Response(JSON.stringify([]), {
+      status: 200,
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+  }
 
   return new Response(JSON.stringify(userClubsData), {
     status: 200,
