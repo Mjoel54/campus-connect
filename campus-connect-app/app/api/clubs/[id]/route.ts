@@ -1,5 +1,4 @@
 import { NextRequest } from "next/server";
-// import { clubs } from "@/app/club-data";
 import { connectToDb } from "../../db";
 import { ObjectId } from "mongodb";
 
