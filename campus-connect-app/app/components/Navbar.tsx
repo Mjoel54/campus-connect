@@ -1,3 +1,7 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+
 import {
   Disclosure,
   DisclosureButton,
@@ -33,6 +37,7 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+  const pathname = usePathname();
   return (
     <>
       <Disclosure
@@ -57,7 +62,7 @@ export default function Navbar() {
                       href={item.href}
                       aria-current={item.current ? "page" : undefined}
                       className={classNames(
-                        item.current
+                        item.href === pathname
                           ? "bg-indigo-700 text-white"
                           : "text-white hover:bg-indigo-500/75",
                         "rounded-md px-3 py-2 text-sm font-medium"
