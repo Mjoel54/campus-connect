@@ -1,4 +1,5 @@
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
+import { Club } from "@/app/club-data";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -14,7 +15,7 @@ export default async function ClubCard() {
       role="list"
       className="divide-y divide-gray-100 overflow-hidden bg-white ring-1 shadow-xs ring-gray-900/5 sm:rounded-xl"
     >
-      {data.map((club) => (
+      {data.map((club: Club) => (
         <li
           key={club._id}
           className="relative flex justify-between gap-x-6 px-4 py-5 hover:bg-gray-50 sm:px-6 cursor-pointer"
