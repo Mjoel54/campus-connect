@@ -1,7 +1,11 @@
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
+import dotenv from "dotenv";
+dotenv.config();
+
+const { NEXT_PUBLIC_SITE_URL } = process.env;
 
 export default async function ClubCard() {
-  const response = await fetch("http://localhost:3000/api/clubs");
+  const response = await fetch(`${NEXT_PUBLIC_SITE_URL}/api/clubs`);
   const data = await response.json();
   //   console.log(data);
 

@@ -1,5 +1,9 @@
 import Link from "next/link";
 import NotFound from "@/app/not-found";
+import dotenv from "dotenv";
+dotenv.config();
+
+const { NEXT_PUBLIC_SITE_URL } = process.env;
 
 import { Fragment } from "react";
 import {
@@ -251,7 +255,9 @@ function classNames(...classes) {
 }
 
 export default async function ClubPage({ params }: { params: { id: string } }) {
-  const response = await fetch(`http://localhost:3000/api/clubs/${params.id}`);
+  const response = await fetch(
+    `${NEXT_PUBLIC_SITE_URL}/api/clubs/${params.id}`
+  );
   const club = await response.json();
 
   if (!club) {
