@@ -1,5 +1,6 @@
 import { NextRequest } from "next/server";
-import { clubs as clubData } from "@/app/club-data"; // imported club details
+import { clubs as clubData } from "@/app/club-data";
+// imported club details
 
 type UserClubs = {
   id: string;
