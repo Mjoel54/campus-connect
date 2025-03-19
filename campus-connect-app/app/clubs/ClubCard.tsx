@@ -3,7 +3,7 @@ import { ChevronRightIcon } from "@heroicons/react/20/solid";
 export default async function ClubCard() {
   const response = await fetch("http://localhost:3000/api/clubs");
   const data = await response.json();
-  console.log(data);
+  //   console.log(data);
 
   return (
     <ul
