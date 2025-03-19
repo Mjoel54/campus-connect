@@ -32,7 +32,7 @@ export async function connectToDb() {
   await client.connect();
 
   cachedClient = client;
-  cachedDb = client.db();
+  cachedDb = client.db("campus-connect");
 
-  return { client, db: client.db() };
+  return { client, db: client.db("campus-connect") };
 }
