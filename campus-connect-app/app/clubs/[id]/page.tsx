@@ -1,152 +1,148 @@
-"use client";
-
 import Link from "next/link";
 import NotFound from "@/app/not-found";
-import { clubs } from "../../club-data";
 
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import {
-  Dialog,
-  DialogBackdrop,
-  DialogPanel,
-  Popover,
-  PopoverButton,
-  PopoverGroup,
-  PopoverPanel,
+  // Dialog,
+  // DialogBackdrop,
+  // DialogPanel,
+  // Popover,
+  // PopoverButton,
+  // PopoverGroup,
+  // PopoverPanel,
   Tab,
   TabGroup,
   TabList,
   TabPanel,
   TabPanels,
 } from "@headlessui/react";
-import {
-  Bars3Icon,
-  MagnifyingGlassIcon,
-  ShoppingBagIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
+import // Bars3Icon,
+// MagnifyingGlassIcon,
+// ShoppingBagIcon,
+// XMarkIcon,
+"@heroicons/react/24/outline";
 import { StarIcon } from "@heroicons/react/20/solid";
 
-const navigation = {
-  categories: [
-    {
-      id: "wireframe",
-      name: "Wireframe Kits",
-      featured: [
-        {
-          name: "Scaffold",
-          href: "#",
-          imageSrc:
-            "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-05-menu-03.jpg",
-          imageAlt:
-            "Pricing page screenshot with tiered plan options and comparison table on colorful blue and green background.",
-        },
-        {
-          name: "Bones",
-          href: "#",
-          imageSrc:
-            "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-05-menu-04.jpg",
-          imageAlt:
-            "Application screenshot with tiered navigation and account settings form on color red and purple background.",
-        },
-      ],
-      sections: [
-        {
-          id: "application",
-          name: "Application UI",
-          items: [
-            { name: "Home Screens", href: "#" },
-            { name: "Detail Screens", href: "#" },
-            { name: "Settings Screens", href: "#" },
-          ],
-        },
-        {
-          id: "marketing",
-          name: "Marketing",
-          items: [
-            { name: "Landing Pages", href: "#" },
-            { name: "Pricing Pages", href: "#" },
-            { name: "Contact Pages", href: "#" },
-          ],
-        },
-        {
-          id: "ecommerce",
-          name: "Ecommerce",
-          items: [
-            { name: "Storefront Pages", href: "#" },
-            { name: "Product Pages", href: "#" },
-            { name: "Category Pages", href: "#" },
-            { name: "Shopping Cart Pages", href: "#" },
-            { name: "Checkout Pages", href: "#" },
-          ],
-        },
-      ],
-    },
-    {
-      id: "icons",
-      name: "Icons",
-      featured: [
-        {
-          name: "Application UI Pack",
-          href: "#",
-          imageSrc:
-            "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-05-menu-01.jpg",
-          imageAlt:
-            "Payment application dashboard screenshot with transaction table, financial highlights, and main clients on colorful purple background.",
-        },
-        {
-          name: "Marketing Icon Pack",
-          href: "#",
-          imageSrc:
-            "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-05-menu-02.jpg",
-          imageAlt:
-            "Calendar user interface screenshot with icon buttons and orange-yellow theme.",
-        },
-      ],
-      sections: [
-        {
-          id: "general",
-          name: "General Use",
-          items: [
-            { name: "Heroicons Solid", href: "#" },
-            { name: "Heroicons Outline", href: "#" },
-            { name: "Line Illustrations", href: "#" },
-            { name: "Hero Illustrations", href: "#" },
-            { name: "Branded Illustrations", href: "#" },
-            { name: "Skeuomorphic Illustrations", href: "#" },
-            { name: "Hand Drawn Illustrations", href: "#" },
-          ],
-        },
-        {
-          id: "application",
-          name: "Application UI",
-          items: [
-            { name: "Outlined", href: "#" },
-            { name: "Solid", href: "#" },
-            { name: "Branded", href: "#" },
-            { name: "Small", href: "#" },
-            { name: "Illustrations", href: "#" },
-          ],
-        },
-        {
-          id: "marketing",
-          name: "Marketing",
-          items: [
-            { name: "Outlined", href: "#" },
-            { name: "Solid", href: "#" },
-            { name: "Branded", href: "#" },
-            { name: "Small", href: "#" },
-            { name: "Illustrations", href: "#" },
-          ],
-        },
-      ],
-    },
-  ],
-  pages: [
-    { name: "UI Kits", href: "#" },
-    { name: "Themes", href: "#" },
-  ],
-};
+// const navigation = {
+//   categories: [
+//     {
+//       id: "wireframe",
+//       name: "Wireframe Kits",
+//       featured: [
+//         {
+//           name: "Scaffold",
+//           href: "#",
+//           imageSrc:
+//             "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-05-menu-03.jpg",
+//           imageAlt:
+//             "Pricing page screenshot with tiered plan options and comparison table on colorful blue and green background.",
+//         },
+//         {
+//           name: "Bones",
+//           href: "#",
+//           imageSrc:
+//             "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-05-menu-04.jpg",
+//           imageAlt:
+//             "Application screenshot with tiered navigation and account settings form on color red and purple background.",
+//         },
+//       ],
+//       sections: [
+//         {
+//           id: "application",
+//           name: "Application UI",
+//           items: [
+//             { name: "Home Screens", href: "#" },
+//             { name: "Detail Screens", href: "#" },
+//             { name: "Settings Screens", href: "#" },
+//           ],
+//         },
+//         {
+//           id: "marketing",
+//           name: "Marketing",
+//           items: [
+//             { name: "Landing Pages", href: "#" },
+//             { name: "Pricing Pages", href: "#" },
+//             { name: "Contact Pages", href: "#" },
+//           ],
+//         },
+//         {
+//           id: "ecommerce",
+//           name: "Ecommerce",
+//           items: [
+//             { name: "Storefront Pages", href: "#" },
+//             { name: "Product Pages", href: "#" },
+//             { name: "Category Pages", href: "#" },
+//             { name: "Shopping Cart Pages", href: "#" },
+//             { name: "Checkout Pages", href: "#" },
+//           ],
+//         },
+//       ],
+//     },
+//     {
+//       id: "icons",
+//       name: "Icons",
+//       featured: [
+//         {
+//           name: "Application UI Pack",
+//           href: "#",
+//           imageSrc:
+//             "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-05-menu-01.jpg",
+//           imageAlt:
+//             "Payment application dashboard screenshot with transaction table, financial highlights, and main clients on colorful purple background.",
+//         },
+//         {
+//           name: "Marketing Icon Pack",
+//           href: "#",
+//           imageSrc:
+//             "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-05-menu-02.jpg",
+//           imageAlt:
+//             "Calendar user interface screenshot with icon buttons and orange-yellow theme.",
+//         },
+//       ],
+//       sections: [
+//         {
+//           id: "general",
+//           name: "General Use",
+//           items: [
+//             { name: "Heroicons Solid", href: "#" },
+//             { name: "Heroicons Outline", href: "#" },
+//             { name: "Line Illustrations", href: "#" },
+//             { name: "Hero Illustrations", href: "#" },
+//             { name: "Branded Illustrations", href: "#" },
+//             { name: "Skeuomorphic Illustrations", href: "#" },
+//             { name: "Hand Drawn Illustrations", href: "#" },
+//           ],
+//         },
+//         {
+//           id: "application",
+//           name: "Application UI",
+//           items: [
+//             { name: "Outlined", href: "#" },
+//             { name: "Solid", href: "#" },
+//             { name: "Branded", href: "#" },
+//             { name: "Small", href: "#" },
+//             { name: "Illustrations", href: "#" },
+//           ],
+//         },
+//         {
+//           id: "marketing",
+//           name: "Marketing",
+//           items: [
+//             { name: "Outlined", href: "#" },
+//             { name: "Solid", href: "#" },
+//             { name: "Branded", href: "#" },
+//             { name: "Small", href: "#" },
+//             { name: "Illustrations", href: "#" },
+//           ],
+//         },
+//       ],
+//     },
+//   ],
+//   pages: [
+//     { name: "UI Kits", href: "#" },
+//     { name: "Themes", href: "#" },
+//   ],
+// };
 const product = {
   name: "Application UI Icon Pack",
   version: { name: "1.0", date: "June 5, 2021", datetime: "2021-06-05" },
@@ -235,49 +231,28 @@ const license = {
     </ul>
   `,
 };
-const relatedProducts = [
-  {
-    id: 1,
-    name: "Fusion",
-    category: "UI Kit",
-    href: "#",
-    price: "$49",
-    imageSrc:
-      "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-05-related-product-01.jpg",
-    imageAlt:
-      "Payment application dashboard screenshot with transaction table, financial highlights, and main clients on colorful purple background.",
-  },
-  // More products...
-];
-const footerNavigation = {
-  products: [
-    { name: "Wireframe Kits", href: "#" },
-    { name: "Icons", href: "#" },
-    { name: "UI Kits", href: "#" },
-    { name: "Themes", href: "#" },
-  ],
-  company: [
-    { name: "Who we are", href: "#" },
-    { name: "Open Source", href: "#" },
-    { name: "Press", href: "#" },
-    { name: "Careers", href: "#" },
-    { name: "License", href: "#" },
-    { name: "Privacy", href: "#" },
-  ],
-  customerService: [
-    { name: "Chat", href: "#" },
-    { name: "Contact", href: "#" },
-    { name: "Secure Payments", href: "#" },
-    { name: "FAQ", href: "#" },
-  ],
-};
+// const relatedProducts = [
+//   {
+//     id: 1,
+//     name: "Fusion",
+//     category: "UI Kit",
+//     href: "#",
+//     price: "$49",
+//     imageSrc:
+//       "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-05-related-product-01.jpg",
+//     imageAlt:
+//       "Payment application dashboard screenshot with transaction table, financial highlights, and main clients on colorful purple background.",
+//   },
+//   // More products...
+// ];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function ClubPage({ params }: { params: { id: string } }) {
-  const club = clubs.find((club) => club.id === params.id);
+export default async function ClubPage({ params }: { params: { id: string } }) {
+  const response = await fetch(`http://localhost:3000/api/clubs/${params.id}`);
+  const club = await response.json();
 
   if (!club) {
     return <NotFound />;
