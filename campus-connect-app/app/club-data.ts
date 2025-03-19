@@ -25,4 +25,16 @@ export const clubs: Club[] = [
       "A club for students who enjoy playing and listening to music.",
     members: ["Grace", "Heidi", "Ivan"],
   },
+  {
+    id: "4",
+    name: "Drama Club",
+    description: "A club for students interested in acting and theater.",
+    members: ["Jack", "Karen", "Leo"],
+  },
+  {
+    id: "5",
+    name: "Chess Club",
+    description: "A club for students who enjoy playing chess.",
+    members: ["Mia", "Nina", "Oscar"],
+  },
 ];
