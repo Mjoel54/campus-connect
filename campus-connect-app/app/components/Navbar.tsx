@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import Header from "./Header";
 
 import {
   Disclosure,
@@ -22,7 +23,7 @@ const user = {
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 };
 const navigation = [
-  { name: "Dashboard", href: "/dashboard", current: true },
+  { name: "Dashboard", href: "/dashboard", current: false },
   { name: "Clubs", href: "/clubs", current: false },
   { name: "Events", href: "/events", current: false },
 ];
@@ -32,12 +33,26 @@ const userNavigation = [
   { name: "Sign out", href: "#" },
 ];
 
+// Define pageHeadings with string index signature
+const pageHeadings: { [key: string]: string } = {
+  dashboard: "Dashboard",
+  clubs: "Clubs",
+  events: "Events",
+};
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Navbar() {
   const pathname = usePathname();
+
+  // Extract the first segment of the path (skip the leading slash)
+  const pathSegment = pathname.split("/")[1] || "dashboard";
+
+  // Get the heading from pageHeadings or use a default
+  const heading = pageHeadings[pathSegment] || "Dashboard";
+
   return (
     <>
       <Disclosure
@@ -209,6 +224,7 @@ export default function Navbar() {
           </div>
         </DisclosurePanel>
       </Disclosure>
+      <Header pageHeading={heading} />
     </>
   );
 }
