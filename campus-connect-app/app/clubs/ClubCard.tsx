@@ -1,6 +1,9 @@
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import { Club } from "@/app/club-data";
 import dotenv from "dotenv";
+
+export const dynamic = "force-dynamic";
+
 dotenv.config();
 
 const { NEXT_PUBLIC_SITE_URL } = process.env;
