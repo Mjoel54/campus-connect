@@ -33,7 +33,9 @@ export default async function ClubCard() {
           </div>
           <div className="flex shrink-0 items-center gap-x-4">
             <div className="hidden sm:flex sm:flex-col sm:items-end">
-              <p className="text-sm/6 text-gray-900"># members</p>
+              <p className="text-sm/6 text-gray-900">
+                {club.members.length} members
+              </p>
               {/* {person.lastSeen ? (
                 <p className="mt-1 text-xs/5 text-gray-500">
                   Last seen{" "}
