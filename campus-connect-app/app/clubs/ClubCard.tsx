@@ -6,10 +6,14 @@ export const dynamic = "force-dynamic";
 
 dotenv.config();
 
-const { NEXT_PUBLIC_SITE_URL } = process.env;
+const baseUrl =
+  process.env.VERCEL_URL ||
+  (process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000");
 
 export default async function ClubCard() {
-  const response = await fetch(`${NEXT_PUBLIC_SITE_URL}/api/clubs`);
+  const response = await fetch(`${baseUrl}/api/clubs`);
   const data = await response.json();
   //   console.log(data);
 
