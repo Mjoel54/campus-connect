@@ -6,7 +6,11 @@ export const dynamic = "force-dynamic";
 
 dotenv.config();
 
-const { NEXT_PUBLIC_SITE_URL } = process.env;
+const baseUrl =
+  process.env.VERCEL_URL ||
+  (process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000");
 
 import { Fragment } from "react";
 import {
@@ -258,9 +262,7 @@ function classNames(...classes: (string | false | null | undefined)[]): string {
 }
 
 export default async function ClubPage({ params }: { params: { id: string } }) {
-  const response = await fetch(
-    `${NEXT_PUBLIC_SITE_URL}/api/clubs/${params.id}`
-  );
+  const response = await fetch(`${baseUrl}/api/clubs/${params.id}`);
   const club = await response.json();
 
   if (!club) {
