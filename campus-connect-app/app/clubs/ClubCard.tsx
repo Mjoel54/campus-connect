@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 dotenv.config();
 
 const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
-  ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+  ? `https://campus-connect-gray.vercel.app`
   : "http://localhost:3000";
 
 export default async function ClubCard() {
