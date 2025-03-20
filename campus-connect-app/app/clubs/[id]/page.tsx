@@ -6,9 +6,8 @@ export const dynamic = "force-dynamic";
 
 dotenv.config();
 
-const baseUrl = process.env.VERCEL_URL
-  ? `https://campus-connect-gray.vercel.app
-`
+const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
+  ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
   : "http://localhost:3000";
 
 import { Fragment } from "react";
