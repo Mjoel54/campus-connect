@@ -6,16 +6,24 @@ export const dynamic = "force-dynamic";
 
 dotenv.config();
 
-const baseUrl =
-  process.env.VERCEL_URL ||
-  (process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "http://localhost:3000");
+const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
+  ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+  : "http://localhost:3000";
 
 export default async function ClubCard() {
-  const response = await fetch(`${baseUrl}/api/clubs`);
-  const data = await response.json();
-  //   console.log(data);
+  let data = [];
+  try {
+    console.log("Fetching clubs from:", `${baseUrl}/api/clubs`);
+    const response = await fetch(`${baseUrl}/api/clubs`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch clubs: ${response.statusText}`);
+    }
+    data = await response.json();
+  } catch (error) {
+    console.error("Error fetching clubs:", error);
+    // Optionally, you can return an error message or fallback UI here
+    return <div>Error loading clubs. Please try again later.</div>;
+  }
 
   return (
     <ul
