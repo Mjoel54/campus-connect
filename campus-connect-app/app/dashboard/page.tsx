@@ -1,8 +1,7 @@
 export default function Dashboard() {
   return (
     <div>
-      <h1>Dashboard</h1>
-      <p>Welcome to your dashboard</p>
+      <p>Explore the Clubs page and join a club</p>
     </div>
   );
 }
