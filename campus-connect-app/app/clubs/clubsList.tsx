@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Club } from "../club-data";
+import { Club } from "@/types/club";
 
 export default function ClubsList({ clubs }: { clubs: Club[] }) {
   return (

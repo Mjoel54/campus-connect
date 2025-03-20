@@ -1,10 +1,12 @@
-export interface Club {
-  _id?: string;
-  id: string;
-  name: string;
-  description: string;
-  members: string[];
-}
+import { Club } from "../types/club";
+
+// export interface Club {
+//   _id?: string;
+//   id: string;
+//   name: string;
+//   description: string;
+//   members: string[];
+// }
 
 export const clubs: Club[] = [
   {
