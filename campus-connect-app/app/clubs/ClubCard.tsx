@@ -1,5 +1,5 @@
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
-import { Club } from "@/app/club-data";
+import { Club } from "@/types/club";
 import dotenv from "dotenv";
 
 export const dynamic = "force-dynamic";
