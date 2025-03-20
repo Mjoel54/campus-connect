@@ -1,14 +1,14 @@
 import Link from "next/link";
 import NotFound from "@/app/not-found";
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
 
 export const dynamic = "force-dynamic";
 
-dotenv.config();
+// dotenv.config();
 
-const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "http://localhost:3000";
+// const baseUrl = process.env.VERCEL_URL
+//   ? `https://${process.env.VERCEL_URL}`
+//   : "http://localhost:3000";
 
 import { Fragment } from "react";
 import {
@@ -260,7 +260,7 @@ function classNames(...classes: (string | false | null | undefined)[]): string {
 }
 
 export default async function ClubPage({ params }: { params: { id: string } }) {
-  const response = await fetch(`${baseUrl}/api/clubs/${params.id}`);
+  const response = await fetch(`/api/clubs/${params.id}`);
   const club = await response.json();
 
   if (!club) {
