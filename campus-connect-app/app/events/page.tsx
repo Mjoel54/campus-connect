@@ -1,7 +1,8 @@
 export default function Events() {
   return (
     <>
-      <h1>Events</h1>
+      <p>Coming soon...</p>
+      <p>A list of all club events</p>
     </>
   );
 }
