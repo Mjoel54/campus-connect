@@ -1,17 +1,18 @@
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
 import { Club } from "@/app/club-data";
-// import dotenv from "dotenv";
+import dotenv from "dotenv";
 
 export const dynamic = "force-dynamic";
 
-// dotenv.config();
+dotenv.config();
 
-// const baseUrl = process.env.VERCEL_URL
-//   ? `https://${process.env.VERCEL_URL}`
-//   : "http://localhost:3000";
+const baseUrl = process.env.VERCEL_URL
+  ? `https://campus-connect-gray.vercel.app
+`
+  : "http://localhost:3000";
 
 export default async function ClubCard() {
-  const response = await fetch(`/api/clubs`);
+  const response = await fetch(`${baseUrl}/api/clubs`);
   const data = await response.json();
   //   console.log(data);
 
