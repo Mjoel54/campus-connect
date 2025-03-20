@@ -10,27 +10,28 @@ const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
   ? `https://campus-connect-gray.vercel.app`
   : "http://localhost:3000";
 
-import { Fragment } from "react";
-import {
-  // Dialog,
-  // DialogBackdrop,
-  // DialogPanel,
-  // Popover,
-  // PopoverButton,
-  // PopoverGroup,
-  // PopoverPanel,
-  Tab,
-  TabGroup,
-  TabList,
-  TabPanel,
-  TabPanels,
-} from "@headlessui/react";
-import // Bars3Icon,
+// import { Fragment } from "react";
+// import
+// Dialog,
+// DialogBackdrop,
+// DialogPanel,
+// Popover,
+// PopoverButton,
+// PopoverGroup,
+// PopoverPanel,
+// Tab,
+// TabGroup,
+// TabList,
+// TabPanel,
+// TabPanels,
+// "@headlessui/react";
+// import
+// Bars3Icon,
 // MagnifyingGlassIcon,
 // ShoppingBagIcon,
 // XMarkIcon,
-"@heroicons/react/24/outline";
-import { StarIcon } from "@heroicons/react/20/solid";
+// "@heroicons/react/24/outline";
+// import { StarIcon } from "@heroicons/react/20/solid";
 
 // const navigation = {
 //   categories: [
@@ -168,78 +169,78 @@ const product = {
   imageAlt:
     "Sample of 30 icons with friendly and fun details in outline, filled, and brand color styles.",
 };
-const reviews = {
-  average: 4,
-  featured: [
-    {
-      id: 1,
-      rating: 5,
-      content: `
-        <p>This icon pack is just what I need for my latest project. There's an icon for just about anything I could ever need. Love the playful look!</p>
-      `,
-      date: "July 16, 2021",
-      datetime: "2021-07-16",
-      author: "Emily Selman",
-      avatarSrc:
-        "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
-    },
-    {
-      id: 2,
-      rating: 5,
-      content: `
-        <p>Blown away by how polished this icon pack is. Everything looks so consistent and each SVG is optimized out of the box so I can use it directly with confidence. It would take me several hours to create a single icon this good, so it's a steal at this price.</p>
-      `,
-      date: "July 12, 2021",
-      datetime: "2021-07-12",
-      author: "Hector Gibbons",
-      avatarSrc:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
-    },
-    // More reviews...
-  ],
-};
-const faqs = [
-  {
-    question: "What format are these icons?",
-    answer:
-      "The icons are in SVG (Scalable Vector Graphic) format. They can be imported into your design tool of choice and used directly in code.",
-  },
-  {
-    question: "Can I use the icons at different sizes?",
-    answer:
-      "Yes. The icons are drawn on a 24 x 24 pixel grid, but the icons can be scaled to different sizes as needed. We don't recommend going smaller than 20 x 20 or larger than 64 x 64 to retain legibility and visual balance.",
-  },
-  // More FAQs...
-];
-const license = {
-  href: "#",
-  summary:
-    "For personal and professional use. You cannot resell or redistribute these icons in their original or modified state.",
-  content: `
-    <h4>Overview</h4>
-    
-    <p>For personal and professional use. You cannot resell or redistribute these icons in their original or modified state.</p>
-    
-    <ul role="list">
-    <li>You\'re allowed to use the icons in unlimited projects.</li>
-    <li>Attribution is not required to use the icons.</li>
-    </ul>
-    
-    <h4>What you can do with it</h4>
-    
-    <ul role="list">
-    <li>Use them freely in your personal and professional work.</li>
-    <li>Make them your own. Change the colors to suit your project or brand.</li>
-    </ul>
-    
-    <h4>What you can\'t do with it</h4>
-    
-    <ul role="list">
-    <li>Don\'t be greedy. Selling or distributing these icons in their original or modified state is prohibited.</li>
-    <li>Don\'t be evil. These icons cannot be used on websites or applications that promote illegal or immoral beliefs or activities.</li>
-    </ul>
-  `,
-};
+// const reviews = {
+//   average: 4,
+//   featured: [
+//     {
+//       id: 1,
+//       rating: 5,
+//       content: `
+//         <p>This icon pack is just what I need for my latest project. There's an icon for just about anything I could ever need. Love the playful look!</p>
+//       `,
+//       date: "July 16, 2021",
+//       datetime: "2021-07-16",
+//       author: "Emily Selman",
+//       avatarSrc:
+//         "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
+//     },
+//     {
+//       id: 2,
+//       rating: 5,
+//       content: `
+//         <p>Blown away by how polished this icon pack is. Everything looks so consistent and each SVG is optimized out of the box so I can use it directly with confidence. It would take me several hours to create a single icon this good, so it's a steal at this price.</p>
+//       `,
+//       date: "July 12, 2021",
+//       datetime: "2021-07-12",
+//       author: "Hector Gibbons",
+//       avatarSrc:
+//         "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80",
+//     },
+//     // More reviews...
+//   ],
+// };
+// const faqs = [
+//   {
+//     question: "What format are these icons?",
+//     answer:
+//       "The icons are in SVG (Scalable Vector Graphic) format. They can be imported into your design tool of choice and used directly in code.",
+//   },
+//   {
+//     question: "Can I use the icons at different sizes?",
+//     answer:
+//       "Yes. The icons are drawn on a 24 x 24 pixel grid, but the icons can be scaled to different sizes as needed. We don't recommend going smaller than 20 x 20 or larger than 64 x 64 to retain legibility and visual balance.",
+//   },
+//   // More FAQs...
+// ];
+// const license = {
+//   href: "#",
+//   summary:
+//     "For personal and professional use. You cannot resell or redistribute these icons in their original or modified state.",
+//   content: `
+//     <h4>Overview</h4>
+
+//     <p>For personal and professional use. You cannot resell or redistribute these icons in their original or modified state.</p>
+
+//     <ul role="list">
+//     <li>You\'re allowed to use the icons in unlimited projects.</li>
+//     <li>Attribution is not required to use the icons.</li>
+//     </ul>
+
+//     <h4>What you can do with it</h4>
+
+//     <ul role="list">
+//     <li>Use them freely in your personal and professional work.</li>
+//     <li>Make them your own. Change the colors to suit your project or brand.</li>
+//     </ul>
+
+//     <h4>What you can\'t do with it</h4>
+
+//     <ul role="list">
+//     <li>Don\'t be greedy. Selling or distributing these icons in their original or modified state is prohibited.</li>
+//     <li>Don\'t be evil. These icons cannot be used on websites or applications that promote illegal or immoral beliefs or activities.</li>
+//     </ul>
+//   `,
+// };
 // const relatedProducts = [
 //   {
 //     id: 1,
@@ -255,9 +256,9 @@ const license = {
 //   // More products...
 // ];
 
-function classNames(...classes: (string | false | null | undefined)[]): string {
-  return classes.filter(Boolean).join(" ");
-}
+// function classNames(...classes: (string | false | null | undefined)[]): string {
+//   return classes.filter(Boolean).join(" ");
+// }
 
 export default async function ClubPage({ params }: { params: { id: string } }) {
   const response = await fetch(`${baseUrl}/api/clubs/${params.id}`);
@@ -269,7 +270,7 @@ export default async function ClubPage({ params }: { params: { id: string } }) {
 
   return (
     <div className="bg-white">
-      <main className="mx-auto px-4 pt-14 pb-24 sm:px-6 sm:pt-16 sm:pb-32 lg:max-w-7xl lg:px-8">
+      <main className="mx-auto px-4 pt-8 pb-24 sm:px-6 sm:pt-16 sm:pb-32 lg:max-w-7xl lg:px-8">
         {/* Product */}
         <div className="lg:grid lg:grid-cols-7 lg:grid-rows-1 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16">
           {/* Product image */}
@@ -288,20 +289,20 @@ export default async function ClubPage({ params }: { params: { id: string } }) {
                 <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
                   {club.name}
                 </h1>
-
+                {/* 
                 <h2 id="information-heading" className="sr-only">
                   Product information
-                </h2>
-                <p className="mt-2 text-sm text-gray-500">
+                </h2> */}
+                {/* <p className="mt-2 text-sm text-gray-500">
                   Version {product.version.name} (Updated{" "}
                   <time dateTime={product.version.datetime}>
                     {product.version.date}
                   </time>
                   )
-                </p>
+                </p> */}
               </div>
 
-              <div>
+              {/* <div>
                 <h3 className="sr-only">Reviews</h3>
                 <div className="flex items-center">
                   {[0, 1, 2, 3, 4].map((rating) => (
@@ -318,7 +319,7 @@ export default async function ClubPage({ params }: { params: { id: string } }) {
                   ))}
                 </div>
                 <p className="sr-only">{reviews.average} out of 5 stars</p>
-              </div>
+              </div> */}
             </div>
 
             <p className="mt-6 text-gray-500">{club.description}</p>
@@ -338,7 +339,7 @@ export default async function ClubPage({ params }: { params: { id: string } }) {
               </button> */}
             </div>
 
-            <div className="mt-10 border-t border-gray-200 pt-10">
+            {/* <div className="mt-10 border-t border-gray-200 pt-10">
               <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
               <div className="mt-4">
                 <ul
@@ -352,9 +353,9 @@ export default async function ClubPage({ params }: { params: { id: string } }) {
                   ))}
                 </ul>
               </div>
-            </div>
+            </div> */}
 
-            <div className="mt-10 border-t border-gray-200 pt-10">
+            {/* <div className="mt-10 border-t border-gray-200 pt-10">
               <h3 className="text-sm font-medium text-gray-900">License</h3>
               <p className="mt-4 text-sm text-gray-500">
                 {license.summary}{" "}
@@ -365,7 +366,7 @@ export default async function ClubPage({ params }: { params: { id: string } }) {
                   Read full license
                 </a>
               </p>
-            </div>
+            </div> */}
 
             <div className="mt-10 border-t border-gray-200 pt-10">
               <h3 className="text-sm font-medium text-gray-900">
@@ -432,7 +433,7 @@ export default async function ClubPage({ params }: { params: { id: string } }) {
             </div>
           </div>
 
-          <div className="mx-auto mt-16 w-full max-w-2xl lg:col-span-4 lg:mt-0 lg:max-w-none">
+          {/* <div className="mx-auto mt-16 w-full max-w-2xl lg:col-span-4 lg:mt-0 lg:max-w-none">
             <TabGroup>
               <div className="border-b border-gray-200">
                 <TabList className="-mb-px flex space-x-8">
@@ -530,7 +531,7 @@ export default async function ClubPage({ params }: { params: { id: string } }) {
                 </TabPanel>
               </TabPanels>
             </TabGroup>
-          </div>
+          </div> */}
         </div>
 
         {/* Related products */}

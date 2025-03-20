@@ -1,5 +1,5 @@
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
-import { Club } from "@/app/club-data";
+import { Club } from "@/types/club";
 import dotenv from "dotenv";
 
 export const dynamic = "force-dynamic";
@@ -29,7 +29,7 @@ export default async function ClubCard() {
   return (
     <ul
       role="list"
-      className="divide-y divide-gray-100 overflow-hidden bg-white ring-1 shadow-xs ring-gray-900/5 sm:rounded-xl"
+      className="divide-y divide-gray-100 overflow-hidden bg-white ring-1 shadow-md ring-gray-900/5 rounded-md"
     >
       {data.map((club: Club) => (
         <li
