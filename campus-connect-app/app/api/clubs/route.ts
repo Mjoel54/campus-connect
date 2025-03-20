@@ -1,4 +1,3 @@
-// import { clubs } from "@/app/club-data";
 import { connectToDb } from "../db";
 
 export async function GET() {
