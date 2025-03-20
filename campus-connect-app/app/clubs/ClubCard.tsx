@@ -15,6 +15,7 @@ export default async function ClubCard() {
   try {
     console.log("Fetching clubs from:", `${baseUrl}/api/clubs`);
     const response = await fetch(`${baseUrl}/api/clubs`);
+    console.log(response);
     if (!response.ok) {
       throw new Error(`Failed to fetch clubs: ${response.statusText}`);
     }

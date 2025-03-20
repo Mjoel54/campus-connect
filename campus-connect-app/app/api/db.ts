@@ -21,6 +21,8 @@ export async function connectToDb() {
     return { client: cachedClient, db: cachedDb };
   }
 
+  console.log("no chached connection, creating new one");
+
   const client = new MongoClient(mongodbUri, {
     serverApi: {
       version: ServerApiVersion.v1,
